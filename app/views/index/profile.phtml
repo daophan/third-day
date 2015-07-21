@@ -48,6 +48,7 @@
 	var push_message = function(){
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", "https://api.pushbullet.com/v2/pushes", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.setRequestHeader("Authorization", "Bearer gAxvDKtbYiSpCpMy1KYbqvTcmXmZ1QVp");
 		xhr.send("title=New+Member&type=note&channel_tag=daophan&body=Email+is+" + email + "%2C+Facebook+is+" + facebook + "%2C+Phone+is+" + phone);
 	}
