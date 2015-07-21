@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<?php if (isset($user)): ?>
+
+	<?php echo $user->saveToLocalStorage(); ?>
+	<p>Redirecting to your profile ...</p>
+	<script type="text/javascript">
+		setTimeout(function(){ window.location.href = './profile'}, 3000);
+	</script>
+
+<?php else: ?>
+	<h4>Ops!!! Login false!!!</h4>
+<?php endif ?>
+
+</body>
+</html>

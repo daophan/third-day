@@ -4,7 +4,8 @@
 	<title></title>
 </head>
 <body>
-	<?php echo $this->tag->form(); ?>
+
+<?php echo $this->tag->form(array('index/login', 'method' => 'post', 'style' => "display:none", 'id' => 'loginform')); ?>
 
 	<p>
 		<label for="name">Password</label>
@@ -16,5 +17,16 @@
 	</p>
 
 </form>
+
+<script type="text/javascript">
+	var id = localStorage.getItem('id');
+	if(id==null)
+		document.getElementById('loginform').style.display = 'block';
+	else window.location.href = '/third-day/index/profile'
+</script>
+
+<a class="pushbullet-subscribe-widget" data-channel="daophan" data-widget="button" data-size="small"></a>
+<script type="text/javascript">(function(){var a=document.createElement('script');a.type='text/javascript';a.async=true;a.src='https://widget.pushbullet.com/embed.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);})();</script>
+
 </body>
 </html>
