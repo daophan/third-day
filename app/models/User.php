@@ -20,7 +20,7 @@ class User extends Model
 		$this->email = '';
 		$this->facebook = '';
 		$this->phone = '';
-		$this->complete_profile = false;
+		$this->complete_profile = 0;
 	}
 
 	function saveToLocalStorage()
