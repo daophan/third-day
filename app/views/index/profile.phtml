@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Profile</title>
+	<style type="text/css">
+	.profile{
+		width: 300px;
+	}
+	.profile input{
+		float: right;
+	}
+	</style>
+</head>
+<body>
+<h3>Your ID: <span id="uid"></span></h3>
+<div class="profile">
+	<p>Email: <input onchange="update(this)" type="text" id="email"></p>
+	<p>Facebook: <input onchange="update(this)" type="text" id="facebook"></p>
+	<p>Phone: <input onchange="update(this)" type="text" id="phone"></p>
+	<p><i>Your changes will be saved automatically.</i></p>
+</div>
+<script type="text/javascript">
+	document.getElementById('email').value = localStorage.getItem('email');
+	document.getElementById('facebook').value = localStorage.getItem('facebook');
+	document.getElementById('phone').value = localStorage.getItem('phone');
+
+	var update = function(el){
+		localStorage.setItem(el.id, el.value);
+	}
+</script>
+</body>
+</html>
